@@ -17,21 +17,21 @@ from src_liam.simulation import Simulation
 fichier = path_til + '\\model\\import_retro.yml'
 fichier = path_til + '\\model\\import_PatrimoineR.yml'
 # fichier= path_til_liam + '\\tests\\functional\\import.yml'
-file2h5(fichier, 
-        input_dir=path_til + '\\data\\Patrimoine\\')
+# file2h5(fichier, 
+#         input_dir=path_til + '\\data\\Patrimoine\\')
 
 
 fichier= path_til + 'Model\\console.yml'
 #fichier=  path_til + '\\Model\\console_retro.yml'
 # fichier= 'path_til + '\\tests\\functional\\simulation.yml'
 
-# simulation= Simulation.from_yaml( fichier,
-#                      input_dir=None,
-#                     input_file=None,
-#                     output_dir=path_til + '//output',                    
-#                     output_file=None)
+simulation= Simulation.from_yaml( fichier,
+                     input_dir=None,
+                    input_file=None,
+                    output_dir=path_til + '//output',                    
+                    output_file=None)
 
-# simulation.run(False)
+simulation.run(False)
 
 # import cProfile
 # command = """simulation.run(False)"""
