@@ -2,8 +2,8 @@ entities:
     person:
         fields:
         # personnal intrinseq
-            - age:    int
-            - agem:     {type: int, initialdata: false}  
+            - agem:   int
+            - age:    {type: int, initialdata: false}  
             - sexe:   int
             - wprm_init: {type: int, initialdata: false}  
             
@@ -21,7 +21,7 @@ entities:
             - conj: int
             - dur_in_couple: {type: float, initialdata: false}
             - dur_out_couple: {type: int, initialdata: false}
-            - civilstate: {type: int, initialdata: false}
+            - civilstate: int
             
         # education    
             - education_level: {type: int, initialdata: false, default: 10}
@@ -80,17 +80,22 @@ entities:
             ISMALE: sexe == 1
             ISFEMALE: sexe == 2
 
-            UNSET: 0
+            UNSET: -1
 
-            MARRIED: 1 
-            SINGLE: 2
-            DIVORCED: 3
-            WIDOW: 4
+            MARRIED: 2 
+            SINGLE: 1
+            DIVORCED: 4
+            WIDOW: 3
+            PACS : 5
             
-            ISMARRIED: civilstate == 1
-            ISSINGLE: civilstate == 2
-            ISDIVORCED: civilstate == 3
-            ISWIDOW: civilstate == 4
+            ISMARRIED: civilstate == 2
+            ISSINGLE: civilstate == 1
+            ISDIVORCED: civilstate == 4
+            ISWIDOW: civilstate == 3
+            ISPACS: civilstate == 5
+            LEGAL_UNION: civilstate == 2 or civilstate == 5
+            LEGAL_CELIB: civilstate == 1 or civilstate == 3 or civilstate == 4
+            INCOUPLE: conj > -1
             
             INACTIVE:  1
             UNEMPLOYED: 2
@@ -130,7 +135,7 @@ entities:
             init_weight_ind:
                 - wprm_init: 1
                 - month: randint(0,11)
-                - agem: 12*age + month
+                - age: trunc(agem/12)
                 # - wprm_init: permet de faire des tests
                 - wprm_init: 100*age + month
                 
@@ -153,7 +158,7 @@ entities:
                        fname='workstate.csv', mode='a')
                 - csv( avg(period), count(civilstate==1), count(civilstate==2), count(civilstate==3), count(civilstate==4),
                        count(civilstate <1), fname='civilstate.csv', mode='a')
-                
+                       
             qui_solve: 
                 - quimen: if(quimen>1, 2, quimen)
                 - quimen: if(quimen==2,  
@@ -198,7 +203,6 @@ entities:
                             quifoy)
                 - quifoy: if(quifoy==8,  
                                 if( id == l_foy.get(on_declar.min(id, quifoy==8)),8,9),
-                            quifoy)
-                            
+                            quifoy)             
                             
   
