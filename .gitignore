@@ -22,13 +22,20 @@ local.properties
 *.Rhistory
 *.gzip
 
-data/Patrimoine/Archives/
-data/Patrimoine/*.xls
+data/Destinie/Import
+data/archives_R/Patrimoine/Archives/
+data/Patrimoine/archives_R/*.xls
+data/Patrimoine/archives_R/*.csv
+data/Patrimoine/archives_R/*.h5
+data/Destinie/*.csv
+data/Destinie/*.txt
+data/Destinie/*.doc
 data/Patrimoine/*.csv
-data/Patrimoine/*.h5
-!data/Patrimoine/subset.Rdata
+data/archives_R/Patrimoine/subset.Rdata
 data/Patrimoine/lien_parent_enfant/*.csv
 data/Patrimoine/lien_parent_enfant/*.h5
+data/Patrimoine/archives_R/lien_parent_enfant/*.csv
+data/Patrimoine/archives_R/lien_parent_enfant/*.h5
 model/*.csv
 model/*.h5
 model/*.csv
