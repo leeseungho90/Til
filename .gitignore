@@ -41,6 +41,12 @@ model/*.h5
 model/*.csv
 !model/test.h5
 #model/data/*.csv
+pgm/Pension/Param/*.xls
+pgm/Pension/Param/*.xlsx
+pgm/Pension/Param/*.csv
+pgm/Pension/Calculate/*.csv
+pgm/Pension/Behavior/*.csv
+pgm/Pension/Reformes/*.csv
 
 data/Patrimoine/Past/*.dta
 doc/destinie/*.pdf
