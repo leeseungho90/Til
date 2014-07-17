@@ -558,10 +558,12 @@ class DataTil(object):
         Appelle des fonctions de Liam2
         '''
 
+        path_param = os.path.join(path_model, "til_base_model\param", "globals.csv")
         path = os.path.join(path_model, self._output_name())
         h5file = tables.openFile( path, mode="w")
         # 1 - on met d'abord les global en recopiant le code de liam2
-        globals_def = {'periodic': {'path': 'param/globals.csv'}}
+        # globals_def = {'periodic': {'path': 'param/globals.csv'}}
+        globals_def = {'periodic': {'path': path_param}}
 
         const_node = h5file.createGroup("/", "globals", "Globals")
         localdir = path_model

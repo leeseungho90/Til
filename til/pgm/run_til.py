@@ -1,11 +1,12 @@
 # -*- coding:utf-8 -*-
 
-from til.CONFIG import path_liam, path_model
+from til.CONFIG import path_liam, path_model, path_pension
 import sys
 import os
 from til import __path__ as path_til
 
 sys.path.append(path_liam)
+sys.path.append(path_pension)
 from src.simulation import Simulation
 
 fichier = path_model + '/console.yml'

@@ -17,7 +17,7 @@ import time
 # 1- Importation des classes/librairies/tables nécessaires à l'importation des données de Destinie -> Recup des infos dans Patrimoine
 from til.data.DataTil import DataTil
 from til.data.utils.utils import minimal_dtype, drop_consecutive_row
-from til.pgm.CONFIG import path_data_destinie
+from til.CONFIG import path_data_destinie
 
 class Destinie(DataTil):
 

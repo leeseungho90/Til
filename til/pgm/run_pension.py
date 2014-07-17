@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+from til.CONFIG import path_pension
+
 import pandas as pd
 import sys
 import datetime as dt
@@ -7,7 +10,7 @@ from dateutil.relativedelta import relativedelta
 from numpy import array, around
 import time
 
-
+sys.path.append(path_pension)
 from til_pension.pension_data import PensionData
 from til_pension.pension_legislation import PensionParam, PensionLegislation
 from til_pension.simulation import PensionSimulation
