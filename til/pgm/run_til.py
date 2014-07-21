@@ -9,7 +9,7 @@ sys.path.append(path_liam)
 sys.path.append(path_pension)
 from src.simulation import Simulation
 
-fichier = path_model + '/console.yml'
+fichier = path_model + '\\til_base_model\console.yml'
 output_dir = os.path.join(path_til[0], 'output')
 
 simulation = Simulation.from_yaml( fichier,
